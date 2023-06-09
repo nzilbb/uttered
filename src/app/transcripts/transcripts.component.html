@@ -1,0 +1,8 @@
+<h1 i18n>Transcripts</h1>
+
+<div class="trascripts">
+  <div *ngFor="let transcriptId of transcripts"
+       class="transcript-link">
+    <a [routerLink]="['transcript', transcriptId]">{{transcriptId}}</a>
+  </div>
+</div>

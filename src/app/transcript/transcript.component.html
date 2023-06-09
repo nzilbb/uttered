@@ -1,0 +1,18 @@
+<h1>{{transcriptId}}</h1>
+
+<div *ngIf="transcript" class="transcript">
+  <div id="media-container">
+    <audio #media
+           (timeupdate)="onTimeUpdate">
+      <source src="{{transcript.media}}" type="audio/wav">
+    </audio>
+  </div>
+  <div class="utterances">
+    <div *ngFor="let utterance of transcript.utterances"
+         class="utterance">
+      <input id="{{utterance.utteranceId}}"
+             value="{{utterance.text}}"
+             (focus)="currentUtterance(utterance)">
+    </div>
+  </div>
+</div>
